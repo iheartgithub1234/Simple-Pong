@@ -12,8 +12,6 @@ int main() {
      int p = 0;
      int dp = 0;
      int c = 0;
-     int score = 0;
-     char text[50];
 
      while(!WindowShouldClose()) {
           x += dx;
@@ -35,16 +33,13 @@ int main() {
           if(x < 30) {
                if(y > p - 10 && y < p + 110) {
                     dx *= -1;
-                    score++;
                } else {
                     break;
                }
           }
 
-          sprintf(text, "Score: %d", score);
           BeginDrawing();
           ClearBackground(BLACK);
-          DrawText(text, 470, 30, 20, LIGHTGRAY);
           DrawCircle(x, y, 10, WHITE);
           DrawRectangle(0, p, 20, 100, WHITE);
           DrawRectangle(980, c, 20, 100, WHITE);
